@@ -2818,11 +2818,6 @@
     ],
     "subtitle": "subtitles.block.generic.footsteps"
   },
-  "block.water.ambient": {
-    "replace": true,
-    "sounds": [],
-    "subtitle": "subtitles.block.water.ambient"
-  },
   "block.wet_grass.break": {
     "replace": true,
     "sounds": [
