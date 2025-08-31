@@ -26,14 +26,13 @@ void main() {
     // Properly convert UV2 to float and divide
     vec2 uv2f = vec2(UV2) / 16.0;
     lightMapColor = texelFetch(Sampler2, ivec2(uv2f), 0);
-
+    // Lightmap changes depending on the dimension
     vec4 targetColor = vec4(229.0 / 255.0, 229.0 / 255.0, 229.0 / 255.0, 1.0);
-    // Use a tolerance for float comparison
     float tolerance = 0.001;
-    if (all(lessThan(abs(Color - targetColor), vec4(tolerance)))) {
+    if (all(lessThan(abs(Color - targetColor), vec4(tolerance)))) { // if nether
         vertexColor = Color * lightMapColor;
         vertexColor *= 1.100436681222707;
-    } else {
+    } else {  // if overworld or end
         vertexColor = Color * lightMapColor;
     }
 
