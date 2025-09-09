@@ -20,7 +20,6 @@ void main() {
     } else {  // if overworld or end
         vertexColor = Color * lightMapColor;
     }
-
     texCoord0 = UV0;
 }
 #endif // _LIGHTMAPSAMPLE_GLSL
