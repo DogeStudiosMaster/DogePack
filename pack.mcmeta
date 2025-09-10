@@ -60,10 +60,10 @@
         "directory": "1.21.9_shaders",
         "formats": [
           65,
-          69
+          68
         ],
         "min_format": 65,
-        "max_format": 69
+        "max_format": 68
       },
       {
         "directory": "v8.10.31-1.20.2",
