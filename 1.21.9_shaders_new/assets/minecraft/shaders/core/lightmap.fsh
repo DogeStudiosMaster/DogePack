@@ -1,7 +1,3 @@
-const int BETA_LIGHT[16] = int[](
-    12, 16, 21, 26, 32, 39, 47, 56, 66, 78, 93, 111, 133, 162, 201, 255
-);
-
 layout(std140) uniform LightmapInfo {
     float AmbientLightFactor;
     float SkyFactor;
@@ -13,6 +9,10 @@ layout(std140) uniform LightmapInfo {
     vec3 SkyLightColor;
     vec3 AmbientColor;
 } lightmapInfo;
+
+const int BETA_LIGHT[16] = int[](
+    12, 16, 21, 26, 32, 39, 47, 56, 66, 78, 93, 111, 133, 162, 201, 255
+);
 
 in vec2 texCoord;
 
