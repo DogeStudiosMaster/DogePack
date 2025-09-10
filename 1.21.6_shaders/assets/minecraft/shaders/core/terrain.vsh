@@ -30,7 +30,7 @@ void main() {
     float tolerance = 0.001;
     if (all(lessThan(abs(Color - targetColor), vec4(tolerance)))) { // if nether
         vertexColor = Color * lightMapColor;
-        vertexColor *= 1.100436681222707;
+        vertexColor *= (252.0 / 229.0);
     } else {  // if overworld or end
         vertexColor = Color * lightMapColor;
     }
