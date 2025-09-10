@@ -1,3 +1,5 @@
+#version 330
+
 #moj_import <minecraft:light.glsl>
 #moj_import <minecraft:fog.glsl>
 #moj_import <minecraft:dynamictransforms.glsl>
@@ -15,27 +17,33 @@ uniform sampler2D Sampler2;
 
 out float sphericalVertexDistance;
 out float cylindricalVertexDistance;
+#ifdef PER_FACE_LIGHTING
+out vec4 vertexPerFaceColor0;
+out vec4 vertexPerFaceColor1;
+#else
 out vec4 vertexColor;
+#endif
 out vec4 lightMapColor;
 out vec4 overlayColor;
 out vec2 texCoord0;
-
-vec4 minecraft_sample_lightmap(sampler2D lightMap, ivec2 uv) {
-    return texture(lightMap, clamp(uv / vec2(255.0, 247.0), vec2(0.5 / 16.0), vec2(15.5 / 16.0)));
-}
 
 void main() {
     gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
 
     sphericalVertexDistance = fog_spherical_distance(Position);
     cylindricalVertexDistance = fog_cylindrical_distance(Position);
-#ifdef NO_CARDINAL_LIGHTING
+
+#ifdef PER_FACE_LIGHTING
+    vec2 light = minecraft_compute_light(Light0_Direction, Light1_Direction, Normal);
+    vertexPerFaceColor0 = minecraft_mix_light_separate(-light, Color);
+    vertexPerFaceColor1 = minecraft_mix_light_separate(light, Color);
+#elif defined(NO_CARDINAL_LIGHTING)
     vertexColor = Color;
 #else
     vertexColor = minecraft_mix_light(Light0_Direction, Light1_Direction, Normal, Color);
 #endif
 #ifndef EMISSIVE
-    lightMapColor = Color * minecraft_sample_lightmap(Sampler2, UV2);
+    lightMapColor = texelFetch(Sampler2, UV2 / 16, 0);
 #endif
     overlayColor = texelFetch(Sampler1, UV1, 0);
 
