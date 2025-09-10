@@ -1,4 +1,3 @@
-#version 460
 #moj_import <betalight.glsl>
 
 layout(std140) uniform LightmapInfo {

@@ -1,4 +1,3 @@
-#version 460
 #moj_import <fog.glsl>
 #moj_import <dynamictransforms.glsl>
 #moj_import <projection.glsl>
