@@ -1,3 +1,4 @@
+#version 460
 #ifndef _LIGHTMAPSAMPLE_GLSL
 #define _LIGHTMAPSAMPLE_GLSL
 
