@@ -27,6 +27,10 @@ out vec4 lightMapColor;
 out vec4 overlayColor;
 out vec2 texCoord0;
 
+vec4 minecraft_sample_lightmap(sampler2D lightMap, ivec2 uv) {
+    return texture(lightMap, clamp(uv / vec2(255.0, 263.0), vec2(0.5 / 16.0), vec2(15.5 / 16.0)));
+}
+
 void main() {
     gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
 
@@ -42,9 +46,11 @@ void main() {
 #else
     vertexColor = minecraft_mix_light(Light0_Direction, Light1_Direction, Normal, Color);
 #endif
+
 #ifndef EMISSIVE
-    lightMapColor = texelFetch(Sampler2, UV2 / 16, 0);
+    lightMapColor = minecraft_sample_lightmap(Sampler2, UV2);
 #endif
+
     overlayColor = texelFetch(Sampler1, UV1, 0);
 
     texCoord0 = UV0;
