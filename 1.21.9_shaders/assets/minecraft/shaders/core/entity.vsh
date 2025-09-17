@@ -28,7 +28,7 @@ out vec4 overlayColor;
 out vec2 texCoord0;
 
 vec4 minecraft_sample_lightmap(sampler2D lightMap, ivec2 uv) {
-    return texture(lightMap, clamp(uv / vec2(255.0, 263.0), vec2(0.5 / 16.0), vec2(15.5 / 16.0)));
+    return texture(lightMap, clamp(uv / vec2(255.0, 255.0), vec2(0.5 / 16.0), vec2(15.5 / 16.0)));
 }
 
 void main() {
