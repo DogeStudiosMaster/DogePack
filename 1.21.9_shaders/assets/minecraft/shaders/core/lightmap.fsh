@@ -38,12 +38,13 @@ void main() {
     // Keep Ambient Color and Ambient Light as-is
     color = mix(color, lightmapInfo.AmbientColor, clamp(lightmapInfo.AmbientLightFactor / 1.9, 0.0, 1.0));
 
-    // Night Vision logic (unchanged)
+    // Night Vision logic (revised to mix with SkyLightColor)
+    // Minecraft 1.21.9 and above are required
     if (lightmapInfo.NightVisionFactor > 0.0) {
         float max_component = max(color.r, max(color.g, color.b));
         if (max_component < 1.0) {
-            vec3 bright_color = color / max_component;
-            color = mix(color, bright_color, lightmapInfo.NightVisionFactor);
+            vec3 bright_color = max((pow(color, color)) / 2.0, color);
+            color = max((mix(bright_color, lightmapInfo.SkyLightColor, clamp(lightmapInfo.NightVisionFactor, 0.0, 1.0))), bright_color);
         }
     }
 
