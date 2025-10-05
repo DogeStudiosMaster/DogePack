@@ -43,8 +43,8 @@ void main() {
     if (lightmapInfo.NightVisionFactor > 0.0) {
         float max_component = max(color.r, max(color.g, color.b));
         if (max_component < 1.0) {
-            vec3 bright_color = max((pow(color, color)) / 2.0, color);
-            color = sqrt(max((mix(bright_color, lightmapInfo.SkyLightColor, clamp(lightmapInfo.NightVisionFactor, 0.0, 1.0))), bright_color));
+            vec3 bright_color = sqrt(1 - (sqrt(1 / (lightmapInfo.AmbientColor)) - color));
+            color = mix(color, sqrt(bright_color), lightmapInfo.NightVisionFactor);
         }
     }
 
