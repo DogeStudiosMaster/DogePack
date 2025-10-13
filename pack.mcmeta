@@ -51,19 +51,19 @@
         "directory": "1.21.6_shaders",
         "formats": [
           63,
-          69
+          2147483647
         ],
         "min_format": 63,
-        "max_format": 69
+        "max_format": 2147483647
       },
       {
         "directory": "1.21.9_shaders",
         "formats": [
           65,
-          71
+          2147483647
         ],
         "min_format": 65,
-        "max_format": 71
+        "max_format": 2147483647
       },
       {
         "directory": "1.21.11_shaders",
@@ -75,7 +75,7 @@
         "max_format": 2147483647
       },
       {
-        "directory": "v8.10.31-1.20.2",
+        "directory": "v8.10.31-1.20.2-Classic_Reimagined_8",
         "formats": [
           18,
           2147483647
@@ -84,7 +84,7 @@
         "max_format": 2147483647
       },
       {
-        "directory": "v8.10.32-1.20.3",
+        "directory": "v8.10.32-1.20.3-Classic_Reimagined_8",
         "formats": [
           22,
           2147483647
@@ -93,7 +93,7 @@
         "max_format": 2147483647
       },
       {
-        "directory": "v10.0.01-1.20.5",
+        "directory": "v10.0.01-1.20.5-Classic_Reimagined_10",
         "formats": [
           32,
           2147483647
@@ -102,7 +102,7 @@
         "max_format": 2147483647
       },
       {
-        "directory": "v10.0.02-1.21.2",
+        "directory": "v10.0.02-1.21.2-Classic_Reimagined_10s",
         "formats": [
           42,
           2147483647
@@ -111,7 +111,7 @@
         "max_format": 2147483647
       },
       {
-        "directory": "v10.0.03-1.21.4",
+        "directory": "v10.0.03-1.21.4-Classic_Reimagined_10_SE",
         "formats": [
           46,
           2147483647
@@ -120,7 +120,7 @@
         "max_format": 2147483647
       },
       {
-        "directory": "v10.0.04-1.21.5",
+        "directory": "v10.0.04-1.21.5-Classic_Reimagined_10_SE_2",
         "formats": [
           55,
           2147483647
@@ -129,7 +129,7 @@
         "max_format": 2147483647
       },
       {
-        "directory": "v10.0.07-1.21.6",
+        "directory": "v10.0.07-1.21.6-Classic_Reimagined_10_SE_2",
         "formats": [
           63,
           2147483647
@@ -138,12 +138,21 @@
         "max_format": 2147483647
       },
       {
-        "directory": "v10.0.09-1.21.9",
+        "directory": "v10.0.09-1.21.9-Classic_Reimagined_10_SE_2",
         "formats": [
           65,
           2147483647
         ],
         "min_format": 65,
+        "max_format": 2147483647
+      },
+      {
+        "directory": "v10.0.10-1.21.11-Classic_Reimagined_10_SE_2",
+        "formats": [
+          70,
+          2147483647
+        ],
+        "min_format": 70,
         "max_format": 2147483647
       }
     ]
