@@ -1,8 +1,8 @@
+#version 460
+#moj_import <dynamictransforms.glsl>
 // code by MrGlitchDogePE
 // OpenGL Shading Language (GLSL) code for Minecraft shaders
 // This code runs with OpenGL version 4.6
-#version 460
-#moj_import <dynamictransforms.glsl>
 layout(std140) uniform Fog {
     vec4 FogColor;
     float FogEnvironmentalStart;
