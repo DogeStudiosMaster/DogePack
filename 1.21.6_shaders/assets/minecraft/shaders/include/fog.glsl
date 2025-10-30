@@ -15,13 +15,13 @@ layout(std140) uniform Fog {
 const int shape = 0; // 0 = spherical, 1 = cylindrical, 2 = planar, 3 = experimental
 // Calculate the fog value based on the distance from the camera
 float linear_fog_value(float vertexDistance, float fogStart, float fogEnd) {
-  float adjustedFogStart = fogStart / 3; // cut-off distance for fog start is 0.85
-  float adjustedFogEnd = fogEnd * 1;
-  if (vertexDistance <= adjustedFogStart) {
-    return 0.0;
-    } else if (vertexDistance >= adjustedFogEnd) {
-      return 1.0;
-      } return (vertexDistance - adjustedFogStart) / (adjustedFogEnd - adjustedFogStart);
+  fogStart /= 3;
+    if (vertexDistance <= fogStart) {
+        return 0.0;
+    } else if (vertexDistance >= fogEnd) {
+        return 1.0;
+    }
+    return (vertexDistance - fogStart) / (fogEnd - fogStart);
 }
 
 float total_fog_value(float sphericalVertexDistance, float cylindricalVertexDistance, float environmentalStart, float environmantalEnd, float renderDistanceStart, float renderDistanceEnd) {
