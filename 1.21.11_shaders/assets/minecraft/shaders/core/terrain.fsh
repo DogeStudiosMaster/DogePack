@@ -12,7 +12,7 @@ in vec2 texCoord0;
 
 out vec4 fragColor;
 
-vec4 sampleNearest(sampler2D sampler, vec2 uv, vec2 pixelSize) {
+vec4 sampleNearest(sampler2D lightmap, vec2 uv, vec2 pixelSize) {
     // Convert UV to texel space
     vec2 texelPos = uv / pixelSize;
     
@@ -23,15 +23,15 @@ vec4 sampleNearest(sampler2D sampler, vec2 uv, vec2 pixelSize) {
     vec2 snappedUV = texelCenter * pixelSize;
     
     // Use texelFetch for perfect pixel sampling if possible, otherwise fall back to texture
-    ivec2 texSize = textureSize(sampler, 0);
+    ivec2 texSize = textureSize(lightmap, 0);
     ivec2 texel = ivec2(texelCenter);
     
     if (all(greaterThanEqual(texel, ivec2(0))) && all(lessThan(texel, texSize))) {
-        return texelFetch(sampler, texel, 0);
+        return texelFetch(lightmap, texel, 0);
     }
     
     // Force nearest neighbor sampling by using texture with snapped UVs
-    return texture(sampler, snappedUV);
+    return texture(lightmap, snappedUV);
 }
 
 void main() {
