@@ -11,33 +11,6 @@
     },
     {
       "type": "bitmap",
-      "file": "gui/custom/logos/cr8.png",
-      "ascent": 14,
-      "height": 20,
-      "chars": [
-        "\uE113"
-      ]
-    },
-    {
-      "type": "bitmap",
-      "file": "gui/custom/logos/cr10.png",
-      "ascent": 14,
-      "height": 20,
-      "chars": [
-        "\uE114"
-      ]
-    },
-    {
-      "type": "bitmap",
-      "file": "gui/custom/logos/cr10_s.png",
-      "ascent": 14,
-      "height": 20,
-      "chars": [
-        "\uE115"
-      ]
-    },
-    {
-      "type": "bitmap",
       "file": "gui/custom/discord.png",
       "ascent": 7,
       "height": 12,
