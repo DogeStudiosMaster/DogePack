@@ -1,0 +1,43 @@
+{
+    "pack": {
+        "pack_format": 15,
+        "supported_formats": [
+            15,
+            2147483647
+        ],
+        "min_format": 15,
+        "max_format": 2147483647,
+        "description": "A reimproved look of Minecraft"
+    },
+    "overlays": {
+        "entries": []
+    },
+    "format_version": 2,
+    "header": {
+        "description": "A reimproved look of Minecraft",
+        "name": "MrGlitchDogePE-addons-DogePack",
+        "uuid": "6abce335-4edf-4312-9bc2-8a923b8dde31",
+        "version": [
+            1,
+            0,
+            0
+        ],
+        "min_engine_version": [
+            1,
+            18,
+            12
+        ]
+    },
+    "modules": [
+        {
+            "description": "A reimproved look of Minecraft",
+            "type": "resources",
+            "uuid": "af506e08-e6e8-4ec8-8db3-03090ec46e3b",
+            "version": [
+                1,
+                0,
+                0
+            ]
+        }
+    ]
+}
